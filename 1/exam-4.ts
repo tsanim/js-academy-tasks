@@ -14,9 +14,9 @@ function isDate(value: any): value is Date {
   return !isNaN(value) && value instanceof Date;
 }
 
-function getCountOfTypes(array: any[]): CountsData {
+function getCountOfTypes(array: unknown[]): CountsData {
   return array.reduce<CountsData>(
-    (data: CountsData, item: any) => {
+    (data: CountsData, item: unknown) => {
       if (item === null) {
         data.nullCount += 1;
       }
